@@ -316,12 +316,10 @@ const tabDescriptions = {
 export default function FiturTabs() {
     const [activeTab, setActiveTab] = useState("all");
 
-    // filter fitur berdasarkan tab yang aktif
     const filteredFitur = fiturData.filter((fitur) =>
         fitur.category.includes(activeTab)
     );
 
-    // informasi tabs
     const tabs = [
         { id: "all", label: "Semua Fitur" },
         { id: "pemula", label: "Untuk Pemula" },
