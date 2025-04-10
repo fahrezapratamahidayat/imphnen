@@ -4,10 +4,11 @@ import Image from "next/image";
 
 export default function FooterSection() {
     return (
-        <footer className="bg-gradient-to-br from-white to-sky-50 text-gray-800 pt-20 pb-10 relative overflow-hidden">
-            {/* Background Elements */}
+        <footer
+            className="bg-gradient-to-br from-white to-sky-50 text-gray-800 pt-20 pb-10 relative overflow-hidden"
+            id="contact"
+        >
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                {/* Background Pattern */}
                 <div className="absolute inset-0 opacity-10 bg-grid-pattern"></div>
 
                 {/* Gradient Orbs */}
@@ -119,12 +120,11 @@ export default function FooterSection() {
                             </div>
 
                             <div className="text-sm text-gray-500">
-                                © 2024 IMPHNEN. All rights reserved.
+                                © 2025 IMPHNEN. All rights reserved.
                             </div>
                         </div>
                     </div>
 
-                    {/* Links Columns */}
                     {[
                         {
                             title: "Navigasi",
@@ -209,7 +209,7 @@ export default function FooterSection() {
                 </div>
 
                 {/* Newsletter */}
-                <div className="border-t border-gray-100 pt-10 pb-8">
+                {/* <div className="border-t border-gray-100 pt-10 pb-8">
                     <div className="flex flex-col md:flex-row md:items-center justify-between">
                         <div className="md:w-1/2 mb-6 md:mb-0">
                             <h3 className="text-lg font-semibold mb-2">
@@ -243,9 +243,8 @@ export default function FooterSection() {
                             </p>
                         </div>
                     </div>
-                </div>
+                </div> */}
 
-                {/* Bottom Footer */}
                 <div className="border-t border-gray-100 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center">
                     <div className="text-gray-500 text-sm mb-4 md:mb-0">
                         <span>Made with 🧠 by IMPHNEN</span>
