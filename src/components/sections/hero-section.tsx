@@ -23,7 +23,7 @@ export default function HeroSection() {
 
                             <div className="relative">
                                 <h1 className="text-5xl md:text-6xl font-bold mb-2 text-gray-800">
-                                    Ingin Jadi
+                                    Ingin Menjadi
                                 </h1>
                                 <h1 className="text-5xl md:text-6xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-600">
                                     Programmer
