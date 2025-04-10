@@ -204,6 +204,31 @@ const CodeSnippet = ({
 
 export default function PhilosophySection() {
     const [isMounted, setIsMounted] = useState(false);
+    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+    const [cursorVisible, setCursorVisible] = useState(false);
+
+    useEffect(() => {
+        if (!isMounted) return;
+        const handleMouseMove = (e: MouseEvent) => {
+            setMousePosition({ x: e.clientX, y: e.clientY });
+        };
+
+        const handleMouseEnter = () => setCursorVisible(true);
+        const handleMouseLeave = () => setCursorVisible(false);
+
+        const section = document.getElementById("philosophy");
+        if (section && isMounted) {
+            section.addEventListener("mousemove", handleMouseMove);
+            section.addEventListener("mouseenter", handleMouseEnter);
+            section.addEventListener("mouseleave", handleMouseLeave);
+
+            return () => {
+                section.removeEventListener("mousemove", handleMouseMove);
+                section.removeEventListener("mouseenter", handleMouseEnter);
+                section.removeEventListener("mouseleave", handleMouseLeave);
+            };
+        }
+    }, [isMounted]);
 
     useEffect(() => {
         setIsMounted(true);
@@ -216,6 +241,21 @@ export default function PhilosophySection() {
             className="py-16 md:py-24 bg-gradient-to-b from-white to-sky-50 relative overflow-hidden"
             id="philosophy"
         >
+            <motion.div
+                className="fixed w-6 h-6 bg-gradient-to-r from-sky-400 to-indigo-500 rounded-full mix-blend-multiply filter blur-md opacity-50 pointer-events-none z-50"
+                style={{
+                    left: mousePosition.x,
+                    top: mousePosition.y,
+                    opacity: cursorVisible ? 0.5 : 0,
+                }}
+                animate={{
+                    scale: [1, 1.2, 1],
+                }}
+                transition={{
+                    duration: 1.5,
+                    repeat: Infinity,
+                }}
+            />
             <div className="absolute inset-0 overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-full bg-[url('/neuron-bg.svg')] opacity-5 bg-repeat"></div>
                 <motion.div
@@ -314,7 +354,7 @@ export default function PhilosophySection() {
                     "function understand() {\n  /* logic > syntax */\n  return concepts;\n}",
                     "const knowledge = concepts\n  .map(c => understand(c))\n  .filter(c => c.useful);",
                     "class Programmer {\n  constructor(mindset) {\n    this.problemSolving = true;\n  }\n}",
-                    "// Kode hanya alat\n// pemikiran adalah esensi\nimport { concepts } from 'deep-understanding';",
+                    "// AI hanyalah alat\n// scroll fesbuk adalah solusi\nimport { fesbuk } from 'brain';",
                 ].map((code, i) => (
                     <motion.div
                         key={i}
@@ -341,7 +381,6 @@ export default function PhilosophySection() {
                 ))}
             </div>
 
-            {/* Abstract SVG Shapes */}
             <motion.div
                 className="absolute top-10 right-[10%] w-20 h-20 opacity-30"
                 animate={{ y: [0, -15, 0], rotate: [0, 5, 0] }}
@@ -460,28 +499,36 @@ export default function PhilosophySection() {
                                         </span>
                                     </h2>
 
-                                    <div className="flex justify-center space-x-3 text-gray-500">
-                                        {[
-                                            "Berpikir",
-                                            "Memahami",
-                                            "Menyelesaikan",
-                                        ].map((word, i) => (
-                                            <motion.div
-                                                key={i}
-                                                initial={{ opacity: 0 }}
-                                                whileInView={{ opacity: 1 }}
-                                                transition={{ delay: 0.1 * i }}
-                                                viewport={{ once: true }}
-                                                className="flex items-center"
-                                            >
-                                                {i > 0 && (
-                                                    <span className="mr-3 text-sky-300">
-                                                        •
-                                                    </span>
-                                                )}
-                                                <span>{word}</span>
-                                            </motion.div>
-                                        ))}
+                                    <div className="flex justify-center space-x-3 text-gray-500 flex-wrap flex-col items-center">
+                                        <div className="flex flex-wrap gap-2">
+                                            {[
+                                                "Berpikir",
+                                                "Memahami",
+                                                "Menyelesaikan",
+                                            ].map((word, i) => (
+                                                <motion.div
+                                                    key={i}
+                                                    initial={{ opacity: 0 }}
+                                                    whileInView={{ opacity: 1 }}
+                                                    transition={{
+                                                        delay: 0.1 * i,
+                                                    }}
+                                                    viewport={{ once: true }}
+                                                    className="flex items-center"
+                                                >
+                                                    {i > 0 && (
+                                                        <span className="mr-3 text-sky-300">
+                                                            •
+                                                        </span>
+                                                    )}
+                                                    <span>{word}</span>
+                                                </motion.div>
+                                            ))}
+                                        </div>
+                                        <span className="text-sky-300">
+                                            meski kami malas ngoding, kami juga
+                                            memiliki filosofi
+                                        </span>
                                     </div>
                                 </div>
                             </TiltCard>
@@ -1237,7 +1284,6 @@ export default function PhilosophySection() {
                 </div>
             </div>
 
-            {/* Floating illustrated elements */}
             <motion.div
                 className="absolute bottom-10 right-10 w-24 h-24 opacity-70 hidden lg:block"
                 animate={{ y: [0, -10, 0], rotate: [0, 5, 0] }}
