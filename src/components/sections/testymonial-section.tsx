@@ -5,6 +5,31 @@ import TestimonialSlider from "../ui/TestimonialSlider";
 import { useEffect, useState } from "react";
 export default function TestymonialSection() {
     const [isMounted, setIsMounted] = useState(false);
+    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+    const [cursorVisible, setCursorVisible] = useState(false);
+
+    useEffect(() => {
+        if (!isMounted) return;
+        const handleMouseMove = (e: MouseEvent) => {
+            setMousePosition({ x: e.clientX, y: e.clientY });
+        };
+
+        const handleMouseEnter = () => setCursorVisible(true);
+        const handleMouseLeave = () => setCursorVisible(false);
+
+        const section = document.getElementById("testimonials");
+        if (section && isMounted) {
+            section.addEventListener("mousemove", handleMouseMove);
+            section.addEventListener("mouseenter", handleMouseEnter);
+            section.addEventListener("mouseleave", handleMouseLeave);
+
+            return () => {
+                section.removeEventListener("mousemove", handleMouseMove);
+                section.removeEventListener("mouseenter", handleMouseEnter);
+                section.removeEventListener("mouseleave", handleMouseLeave);
+            };
+        }
+    }, [isMounted]);
 
     useEffect(() => {
         setIsMounted(true);
@@ -16,7 +41,21 @@ export default function TestymonialSection() {
             id="testimonials"
             className="py-20 md:py-28 bg-gradient-to-b from-white to-blue-50 relative overflow-hidden"
         >
-            {/* Background Elements */}
+            <motion.div
+                className="fixed w-6 h-6 bg-gradient-to-r from-sky-400 to-indigo-500 rounded-full mix-blend-multiply filter blur-md opacity-50 pointer-events-none z-50"
+                style={{
+                    left: mousePosition.x,
+                    top: mousePosition.y,
+                    opacity: cursorVisible ? 0.5 : 0,
+                }}
+                animate={{
+                    scale: [1, 1.2, 1],
+                }}
+                transition={{
+                    duration: 1.5,
+                    repeat: Infinity,
+                }}
+            />
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 {/* Gradient Blobs */}
                 <motion.div
@@ -138,16 +177,18 @@ export default function TestymonialSection() {
                             <h2 className="text-3xl md:text-5xl font-bold mb-4 text-gray-800">
                                 Para{" "}
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-indigo-500">
-                                    Filosof Programmer
+                                    Filosofi Programmer
                                 </span>
                             </h2>
 
                             {/* Accent Graphic */}
                             <div className="inline-block relative">
                                 <p className="text-gray-600 max-w-3xl mx-auto text-lg">
-                                    Kisah mereka yang &quot;tidak lagi
-                                    repot-repot coding, tapi tetap disebut
-                                    programmer&quot;
+                                    Kisah mereka yang yang sudah join{" "}
+                                    <span className="text-sky-500">
+                                        IMPHNEN
+                                    </span>
+                                    yang sudah tidak capek-capek ngoding
                                 </p>
                                 <svg
                                     className="absolute -right-12 top-0 w-10 h-10 text-sky-400/30 animate-spin-slow"
@@ -185,7 +226,7 @@ export default function TestymonialSection() {
                             },
                             {
                                 stat: "∞",
-                                label: "Ide tanpa perlu implementasi",
+                                label: "Scroll fesbuk",
                                 icon: "💭",
                                 color: "from-indigo-500 to-purple-500",
                                 rotate: "rotate-1",
@@ -197,7 +238,10 @@ export default function TestymonialSection() {
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ duration: 0.4, delay: i * 0.1 }}
+                                transition={{
+                                    duration: 0.4,
+                                    delay: i * 0.1,
+                                }}
                                 whileHover={{
                                     y: -10,
                                     boxShadow:
@@ -310,11 +354,17 @@ export default function TestymonialSection() {
                             }}
                         >
                             {[
-                                { name: "TechCo", style: "font-serif" },
-                                { name: "StartApp", style: "font-mono" },
-                                { name: "DeviNull", style: "font-bold italic" },
-                                { name: "PixelPro", style: "tracking-widest" },
-                                { name: "ByteSized", style: "font-light" },
+                                { name: "gak tau", style: "font-serif" },
+                                { name: "gak tau", style: "font-mono" },
+                                {
+                                    name: "gak tau",
+                                    style: "font-bold italic",
+                                },
+                                {
+                                    name: "gak tau",
+                                    style: "tracking-widest",
+                                },
+                                { name: "gak tau", style: "font-light" },
                             ].map((company, i) => (
                                 <div
                                     key={i}
@@ -397,13 +447,18 @@ export default function TestymonialSection() {
                                 </div>
                                 <div className="md:w-1/3">
                                     <motion.div
-                                        whileHover={{ scale: 1.05, rotate: -2 }}
+                                        whileHover={{
+                                            scale: 1.05,
+                                            rotate: -2,
+                                        }}
                                         whileTap={{ scale: 0.95 }}
                                         className="transform rotate-2"
                                     >
-                                        <Button className="w-full bg-gradient-to-r from-sky-500 to-indigo-500 hover:from-sky-600 hover:to-indigo-600 text-white text-center px-6 py-3 rounded-lg font-medium shadow-xl">
-                                            Bergabung Sekarang
-                                        </Button>
+                                        <a href="#community">
+                                            <Button className="w-full bg-gradient-to-r from-sky-500 to-indigo-500 hover:from-sky-600 hover:to-indigo-600 text-white text-center px-6 py-3 rounded-lg font-medium shadow-xl">
+                                                Bergabung Sekarang
+                                            </Button>
+                                        </a>
                                     </motion.div>
                                     <div className="mt-2 text-xs text-center text-gray-500">
                                         Tidak perlu coding skill, hanya perlu
@@ -415,9 +470,6 @@ export default function TestymonialSection() {
                     </div>
                 </div>
             </div>
-
-            {/* Visual Bottom Border */}
-            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-sky-500 via-transparent to-indigo-500"></div>
         </section>
     );
 }
