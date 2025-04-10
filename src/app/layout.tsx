@@ -18,7 +18,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-    title: "IMPHNEN - Komunitas Para Calon Programmer Tanpa Stress Coding",
+    title: "IMPHNEN - Komunitas Proggamer Handal",
     description:
         "Belajar konsep pemrograman secara fundamental tanpa terjebak syntax. Bergabunglah dengan komunitas IMPHNEN untuk pengalaman belajar yang menyenangkan.",
     keywords: [
