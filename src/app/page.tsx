@@ -10,16 +10,18 @@ import TestymonialSection from "@/components/sections/testymonial-section";
 
 export default function Home() {
     return (
-        <div className="min-h-screen">
-            <Navbar />
-            <HeroSection />
-            <AboutSection />
-            <FiturSection />
-            <CommunitySection />
-            <PhilosophySection />
-            <TestymonialSection />
-            <FaqSection />
-            <FooterSection />
+        <div className=" ">
+            <main className="">
+                <Navbar />
+                <HeroSection />
+                <AboutSection />
+                <FiturSection />
+                <CommunitySection />
+                <PhilosophySection />
+                <TestymonialSection />
+                <FaqSection />
+                <FooterSection />
+            </main>
         </div>
     );
 }
