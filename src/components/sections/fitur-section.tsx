@@ -211,12 +211,52 @@ export default function FiturSection() {
         setParticles(newParticles);
     }, []);
 
+    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+    const [cursorVisible, setCursorVisible] = useState(false);
+
+    useEffect(() => {
+        const handleMouseMove = (e: MouseEvent) => {
+            setMousePosition({ x: e.clientX, y: e.clientY });
+        };
+
+        const handleMouseEnter = () => setCursorVisible(true);
+        const handleMouseLeave = () => setCursorVisible(false);
+
+        const section = document.getElementById("features");
+        if (section) {
+            section.addEventListener("mousemove", handleMouseMove);
+            section.addEventListener("mouseenter", handleMouseEnter);
+            section.addEventListener("mouseleave", handleMouseLeave);
+
+            return () => {
+                section.removeEventListener("mousemove", handleMouseMove);
+                section.removeEventListener("mouseenter", handleMouseEnter);
+                section.removeEventListener("mouseleave", handleMouseLeave);
+            };
+        }
+    }, []);
+
     return (
         <section
             className="py-24 bg-gradient-to-b from-white to-sky-50 relative overflow-hidden"
             id="features"
         >
-            <div className="relative" ref={ref}>
+            <div className="relative " ref={ref}>
+                <motion.div
+                    className="fixed w-6 h-6 bg-gradient-to-r from-sky-400 to-indigo-500 rounded-full mix-blend-multiply filter blur-md opacity-50 pointer-events-none z-50 bg-red-500"
+                    style={{
+                        left: mousePosition.x,
+                        top: mousePosition.y,
+                        opacity: cursorVisible ? 0.5 : 0,
+                    }}
+                    animate={{
+                        scale: [1, 1.2, 1],
+                    }}
+                    transition={{
+                        duration: 1.5,
+                        repeat: Infinity,
+                    }}
+                />
                 <AnimatedBlob className="bg-sky-200 w-96 h-96 -top-32 -left-32" />
                 <AnimatedBlob
                     className="bg-indigo-200 w-80 h-80 bottom-20 -right-20"
@@ -368,7 +408,7 @@ export default function FiturSection() {
                                         duration: 3,
                                     }}
                                 >
-                                    tanpa pernah benar-benar menulis kode
+                                    tapi malas ngoding
                                 </motion.span>
                                 .
                             </p>
@@ -498,17 +538,15 @@ export default function FiturSection() {
                                                 Catatan Penting:
                                             </p>
                                             <p className="text-amber-700">
-                                                Paradigma di atas adalah satir.
+                                                Paradigma di atas bercanda sih.
                                                 Meskipun kami bercanda, kami
                                                 tetap mendorong pemahaman konsep
                                                 yang kuat. Ngoding itu memang
                                                 susah, tapi tetap penting untuk
-                                                dipraktikkan... sesekali. Adopsi
-                                                paradigma ini di kantor dengan
-                                                risiko Anda sendiri.
+                                                scroll fesbuk biar ga stress dan
+                                                sayangi tubuh anda.
                                             </p>
 
-                                            {/* Fake coffee stain */}
                                             <div className="absolute -bottom-10 -right-10 w-24 h-24 rounded-full bg-amber-700 opacity-10 transform rotate-12 hidden md:block"></div>
                                         </div>
                                     </div>
@@ -518,14 +556,6 @@ export default function FiturSection() {
                     </div>
                 </div>
             </div>
-            <style jsx global>{`
-                .transform-gpu {
-                    transform: translateZ(0);
-                }
-                .perspective-1000 {
-                    perspective: 1000px;
-                }
-            `}</style>
         </section>
     );
 }
