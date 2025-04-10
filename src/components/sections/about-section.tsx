@@ -2,6 +2,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
 import { Button } from "../ui/button";
+import Link from "next/link";
 
 const TiltCard = ({
     children,
@@ -121,10 +122,9 @@ export default function AboutSection() {
     return (
         <section
             id="about"
-            className="relative py-24 bg-gradient-to-br from-white via-gray-50 to-sky-50 overflow-hidden"
+            className="py-24 bg-gradient-to-br from-white via-gray-50 to-sky-50 overflow-hidden"
         >
             <div className="relative" ref={ref}>
-                {/* Custom cursor trail */}
                 <motion.div
                     className="fixed w-6 h-6 bg-gradient-to-r from-sky-400 to-indigo-500 rounded-full mix-blend-multiply filter blur-md opacity-50 pointer-events-none z-50"
                     style={{
@@ -140,10 +140,7 @@ export default function AboutSection() {
                         repeat: Infinity,
                     }}
                 />
-
-                {/* Decorative Elements */}
-                <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                    {/* Background blobs dengan variasi ukuran dan posisi */}
+                <div className="absolute inset-0 overflow-hidden pointer-events-none ">
                     <AnimatedBlob className="bg-sky-100 -top-32 -right-32" />
                     <AnimatedBlob
                         className="bg-indigo-100 -bottom-32 -left-32"
@@ -162,8 +159,6 @@ export default function AboutSection() {
                         delay={7}
                         duration={22}
                     />
-
-                    {/* Floating Elements with parallax effect */}
                     <motion.div
                         className="absolute top-1/4 right-[10%] opacity-20"
                         style={{ y: y1, rotate: rotate1 }}
@@ -215,8 +210,6 @@ export default function AboutSection() {
                             🧠
                         </motion.div>
                     </motion.div>
-
-                    {/* Decorative pattern */}
                     <div className="absolute inset-0 opacity-5">
                         <div
                             className="w-full h-full"
@@ -226,8 +219,6 @@ export default function AboutSection() {
                             }}
                         ></div>
                     </div>
-
-                    {/* Decorative Shapes */}
                     {[...Array(8)].map((_, i) => (
                         <motion.div
                             key={i}
@@ -257,9 +248,8 @@ export default function AboutSection() {
                     ))}
                 </div>
 
-                <div className="container mx-auto px-4 relative z-10">
+                <div className="px-4 relative z-10">
                     <div className="max-w-6xl mx-auto">
-                        {/* Section Header dengan glow effect */}
                         <div className="text-center mb-20">
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
@@ -542,7 +532,7 @@ export default function AboutSection() {
                                             icon: "🤹‍♂️",
                                             title: "Programmer Lifestyle",
                                             description:
-                                                "Nikmati gaya hidup programmer tanpa beban debugging hingga larut malam. Bicarakan konsep algoritma sambil menikmati kopi.",
+                                                "Nikmati gaya hidup programmer tanpa beban debugging hingga larut malam. Bicarakan konsep algoritma sambil menikmati kopi dengan scroll fesbuk.",
                                             color: "from-indigo-500 to-purple-500",
                                             rotate: "-rotate-1",
                                         },
@@ -594,7 +584,11 @@ export default function AboutSection() {
                                         transition={{ duration: 0.6 }}
                                     >
                                         <h3 className="text-2xl font-bold mb-4 text-gray-800">
-                                            Bagaimana IMPHNEN Bekerja?
+                                            Bagaimana{" "}
+                                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-indigo-500">
+                                                IMPHNEN
+                                            </span>{" "}
+                                            Bekerja?
                                         </h3>
                                         <p className="text-gray-600 max-w-3xl mx-auto text-lg">
                                             Pendekatan unik kami mengubah cara
@@ -625,7 +619,7 @@ export default function AboutSection() {
                                                 step: "01",
                                                 title: "Dekonstruksi Kode",
                                                 description:
-                                                    "Lupakan tentang belajar coding. Kami memecah programming menjadi konsep-konsep filosofis yang bisa dimengerti tanpa harus menulis satu baris kode pun.",
+                                                    "Lupakan tentang belajar coding. Kami memecah programming menjadi konsep-konsep filosofis yang bisa dimengerti tanpa harus menulis satu baris kode pun dengan scroll fesbuk.",
                                                 icon: "🔍",
                                                 rotate: "rotate-2",
                                             },
@@ -633,7 +627,7 @@ export default function AboutSection() {
                                                 step: "02",
                                                 title: "Pemahaman Konseptual",
                                                 description:
-                                                    "Mengembangkan 'peta mental' tentang bagaimana program bekerja. Seperti memahami resep masakan tanpa harus pernah memasak.",
+                                                    "Menggembangkan konsep-konsep filosofis tentang bagaimana program bekerja dengan scroll fesbuk.",
                                                 icon: "🧠",
                                                 rotate: "-rotate-1",
                                             },
@@ -641,7 +635,7 @@ export default function AboutSection() {
                                                 step: "03",
                                                 title: "Aplikasi Teoritis",
                                                 description:
-                                                    "Gunakan pemahaman konseptual untuk membicarakan solusi, tanpa perlu implementasi teknis. Gunakan frasa seperti 'arsitektur sistem', 'skalabilitas', dan 'paradigma'.",
+                                                    "gunakan pemahaman konseptual untuk membicarakan solusi, tanpa perlu implementasi teknis dengan scroll fesbuk.",
                                                 icon: "💬",
                                                 rotate: "rotate-1",
                                             },
@@ -731,7 +725,10 @@ export default function AboutSection() {
                                         transition={{ duration: 0.6 }}
                                     >
                                         <h3 className="text-2xl font-bold mb-4 text-gray-800">
-                                            Nilai-nilai IMPHNEN
+                                            Nilai-nilai{" "}
+                                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-indigo-500">
+                                                IMPHNEN
+                                            </span>
                                         </h3>
                                         <p className="text-gray-600 max-w-3xl mx-auto text-lg">
                                             Prinsip yang memandu komunitas kami
@@ -756,8 +753,8 @@ export default function AboutSection() {
                                         {
                                             title: "Komunitas di Atas Kompetensi",
                                             description:
-                                                "Kami membangun komunitas yang mendukung, di mana anggota saling berbagi pemahaman konseptual tanpa terhalang oleh 'kemampuan teknis'. Diskusi filosofis tentang bagaimana program 'seharusnya' bekerja lebih menarik daripada debugging.",
-                                            quote: "Saya bergabung dengan IMPHNEN dan sekarang saya bisa mendiskusikan machine learning tanpa pernah menulis satu baris kode Python pun!",
+                                                "Kami membangun komunitas yang mendukung, di mana anggota saling berbagi pemahaman konseptual tanpa terhalang oleh 'kemampuan teknis'. Diskusi filosofis tentang bagaimana program 'seharusnya' bekerja lebih menarik daripada debugging dengan scroll fesbuk.",
+                                            quote: "Saya bergabung dengan IMPHNEN dan sekarang saya bisa mendiskusikan machine learning tanpa pernah menulis satu baris kode Python pun dengan scroll fesbuk.",
                                             author: "Member sejak 2023",
                                             image: "👥",
                                             direction: "rtl",
@@ -768,7 +765,7 @@ export default function AboutSection() {
                                             title: "Pemikiran Kreatif Tanpa Batas Teknis",
                                             description:
                                                 "Bebas dari batasan teknis seperti 'apa yang mungkin diimplementasikan', anggota IMPHNEN dapat mengeksplorasi ide-ide programming yang benar-benar inovatif dan revolusioner.",
-                                            quote: "Ketika Anda tidak perlu memikirkan bagaimana mengimplementasikannya, kreativitas Anda benar-benar tidak terbatas.",
+                                            quote: "Ketika Anda tidak perlu memikirkan bagaimana mengimplementasikannya, kreativitas Anda benar-benar tidak terbatas. makanya saya malas ngoding",
                                             author: "IMPHNEN Philosopher",
                                             image: "✨",
                                             direction: "ltr",
@@ -779,7 +776,7 @@ export default function AboutSection() {
                                             title: "Perubahan Ketika Saya join IMPHNEN",
                                             description:
                                                 "saya join IMPHNEN pada tahun 2023, dan sekarang semenjak saya join IMPHNEN, saya jadi tidak mau buka vscode lagi mending scroll fesbuk 🥴",
-                                            quote: "sekarang saya jadi pengguna facebook gila",
+                                            quote: "sekarang saya jadi pengguna facebook gila, mending scroll fesbuk",
                                             author: "IMPHNEN Philosopher",
                                             image: "✨",
                                             direction: "rtl",
@@ -1055,32 +1052,34 @@ export default function AboutSection() {
                                     >
                                         🚀
                                     </motion.div>
-                                    <a
-                                        href="#community"
-                                        className="text-2xl md:text-3xl font-bold mb-4 text-gray-800 inline-block"
-                                    >
+                                    <div className="text-2xl md:text-3xl font-bold mb-4 text-gray-800 inline-block">
                                         Bergabunglah dengan Revolusi Anti-Coding
+                                        dan mending scroll fesbuk
                                         <div className="w-full h-1 bg-gradient-to-r from-sky-500 to-indigo-500 rounded-full mt-1"></div>
-                                    </a>
+                                    </div>
                                     <p className="text-gray-600 text-lg">
                                         Jadilah bagian dari gerakan yang
                                         mengubah cara dunia memandang
-                                        programming. Di IMPHNEN, kami
-                                        membuktikan bahwa Anda bisa menjadi
-                                        programmer tanpa perlu stress dengan
-                                        coding.
+                                        programming dengan scroll fesbuk. Di
+                                        IMPHNEN, kami membuktikan bahwa Anda
+                                        bisa menjadi programmer tanpa perlu
+                                        stress dengan coding.
                                     </p>
                                 </div>
                                 <div className="md:w-1/3 flex flex-col space-y-4">
                                     <TiltCard tiltFactor={15} scale={1.05}>
                                         <motion.div
                                             whileTap={{ scale: 0.95 }}
-                                            className="transform rotate-3"
+                                            className="transform rotate-3 w-full"
                                         >
-                                            <Button className="w-full h-14 bg-gradient-to-r from-sky-500 to-indigo-500 hover:from-sky-600 hover:to-indigo-600 text-white text-center px-6 py-3 rounded-lg font-bold text-lg shadow-lg border-2 border-white">
-                                                Bergabung Sekarang{" "}
-                                                <span className="ml-2">👀</span>
-                                            </Button>
+                                            <a href="#community">
+                                                <Button className="w-full h-14 bg-gradient-to-r from-sky-500 to-indigo-500 hover:from-sky-600 hover:to-indigo-600 text-white text-center px-6 py-3 rounded-lg font-bold text-lg shadow-lg border-2 border-white">
+                                                    Bergabung Sekarang{" "}
+                                                    <span className="ml-2">
+                                                        👀
+                                                    </span>
+                                                </Button>
+                                            </a>
                                         </motion.div>
                                     </TiltCard>
 
@@ -1101,29 +1100,6 @@ export default function AboutSection() {
                     </div>
                 </div>
             </div>
-
-            <style jsx global>{`
-                @keyframes slow-spin {
-                    from {
-                        transform: rotate(0deg);
-                    }
-                    to {
-                        transform: rotate(360deg);
-                    }
-                }
-                .animate-slow-spin {
-                    animation: slow-spin 60s linear infinite;
-                }
-                .perspective-1000 {
-                    perspective: 1000px;
-                }
-                .backface-hidden {
-                    backface-visibility: hidden;
-                }
-                .transform-gpu {
-                    transform: translateZ(0);
-                }
-            `}</style>
         </section>
     );
 }
