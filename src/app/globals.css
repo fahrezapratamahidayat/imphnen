@@ -1,26 +1,214 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --font-sans: var(--font-geist-sans);
+    --font-mono: var(--font-geist-mono);
+    --color-sidebar-ring: var(--sidebar-ring);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar: var(--sidebar);
+    --color-chart-5: var(--chart-5);
+    --color-chart-4: var(--chart-4);
+    --color-chart-3: var(--chart-3);
+    --color-chart-2: var(--chart-2);
+    --color-chart-1: var(--chart-1);
+    --color-ring: var(--ring);
+    --color-input: var(--input);
+    --color-border: var(--border);
+    --color-destructive: var(--destructive);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-accent: var(--accent);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-muted: var(--muted);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-secondary: var(--secondary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-primary: var(--primary);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-popover: var(--popover);
+    --color-card-foreground: var(--card-foreground);
+    --color-card: var(--card);
+    --radius-sm: calc(var(--radius) - 4px);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) + 4px);
+    --animate-accordion-down: accordion-down 0.2s ease-out;
+    --animate-accordion-up: accordion-up 0.2s ease-out;
+
+    @keyframes accordion-down {
+        from {
+            height: 0;
+        }
+        to {
+            height: var(--radix-accordion-content-height);
+        }
+    }
+
+    @keyframes accordion-up {
+        from {
+            height: var(--radix-accordion-content-height);
+        }
+        to {
+            height: 0;
+        }
+    }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+    --background: 216 57% 100%;
+    --foreground: 216 73% 0%;
+    --muted: 216 11% 92%;
+    --muted-foreground: 216 2% 29%;
+    --popover: 216 57% 100%;
+    --popover-foreground: 216 73% 0%;
+    --card: 216 57% 100%;
+    --card-foreground: 216 73% 0%;
+    --border: 216 13% 92%;
+    --input: 216 13% 92%;
+    --primary: 216 100% 58%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 216 6% 85%;
+    --secondary-foreground: 216 6% 25%;
+    --accent: 216 16% 77%;
+    --accent-foreground: 216 16% 17%;
+    --destructive: 17 96% 43%;
+    --destructive-foreground: 0 0% 100%;
+    --ring: 216 100% 58%;
+    --chart-1: 216 100% 58%;
+    --chart-2: 216 6% 85%;
+    --chart-3: 216 16% 77%;
+    --chart-4: 216 6% 88%;
+    --chart-5: 216 103% 58%;
+    --radius: 0.5rem;
+    --sidebar: oklch(0.985 0 0);
+    --sidebar-foreground: oklch(0.145 0 0);
+    --sidebar-primary: oklch(0.205 0 0);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.97 0 0);
+    --sidebar-accent-foreground: oklch(0.205 0 0);
+    --sidebar-border: oklch(0.922 0 0);
+    --sidebar-ring: oklch(0.708 0 0);
+
+    --imphnen-dark-blue: #0a192f;
+    --imphnen-electric-blue: #64ffda;
+    --imphnen-light-blue: #ccd6f6;
+    --imphnen-blue-gradient: linear-gradient(to right, #1e88e5, #0a192f);
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.dark {
+    --background: 216 37% 2%;
+    --foreground: 216 39% 98%;
+    --muted: 216 11% 8%;
+    --muted-foreground: 216 2% 71%;
+    --popover: 216 37% 2%;
+    --popover-foreground: 216 39% 98%;
+    --card: 216 37% 2%;
+    --card-foreground: 216 39% 98%;
+    --border: 216 13% 13%;
+    --input: 216 13% 13%;
+    --primary: 216 100% 58%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 216 2% 15%;
+    --secondary-foreground: 216 2% 75%;
+    --accent: 216 7% 21%;
+    --accent-foreground: 216 7% 81%;
+    --destructive: 17 96% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --ring: 216 100% 58%;
+    --chart-1: 216 100% 58%;
+    --chart-2: 216 2% 15%;
+    --chart-3: 216 7% 21%;
+    --chart-4: 216 2% 18%;
+    --chart-5: 216 103% 58%;
+    --sidebar: oklch(0.205 0 0);
+    --sidebar-foreground: oklch(0.985 0 0);
+    --sidebar-primary: oklch(0.488 0.243 264.376);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.269 0 0);
+    --sidebar-accent-foreground: oklch(0.985 0 0);
+    --sidebar-border: oklch(1 0 0 / 10%);
+    --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+    * {
+        @apply border-border outline-ring/50;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.gradient-border {
+    position: relative;
+    border-radius: 0.75rem;
+    overflow: hidden;
+}
+
+.gradient-border::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #1e88e5, #0a192f, #64ffda);
+    z-index: -1;
+    background-size: 400% 400%;
+    animation: gradient 6s ease infinite;
+    border-radius: 0.85rem;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.font-handwriting {
+    font-family: "Caveat", cursive, system-ui;
+}
+
+@keyframes spin-slow {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-spin-slow {
+    animation: spin-slow 12s linear infinite;
 }
