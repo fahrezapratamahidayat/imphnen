@@ -212,3 +212,43 @@
 .animate-spin-slow {
     animation: spin-slow 12s linear infinite;
 }
+
+@keyframes slow-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.animate-slow-spin {
+    animation: slow-spin 60s linear infinite;
+}
+.perspective-1000 {
+    perspective: 1000px;
+}
+.backface-hidden {
+    backface-visibility: hidden;
+}
+.transform-gpu {
+    transform: translateZ(0);
+}
+
+.perspective-1000 {
+    perspective: 1000px;
+}
+
+@keyframes shine {
+    0% {
+        transform: translateX(-100%) skewX(-15deg);
+    }
+    100% {
+        transform: translateX(200%) skewX(-15deg);
+    }
+}
+.perspective-1000 {
+    perspective: 1000px;
+}
+.transform-gpu {
+    transform: translateZ(0);
+}
