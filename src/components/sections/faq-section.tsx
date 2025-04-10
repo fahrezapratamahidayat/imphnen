@@ -11,6 +11,31 @@ import {
 import { useEffect, useState } from "react";
 export default function FaqSection() {
     const [isMounted, setIsMounted] = useState(false);
+    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+    const [cursorVisible, setCursorVisible] = useState(false);
+
+    useEffect(() => {
+        if (!isMounted) return;
+        const handleMouseMove = (e: MouseEvent) => {
+            setMousePosition({ x: e.clientX, y: e.clientY });
+        };
+
+        const handleMouseEnter = () => setCursorVisible(true);
+        const handleMouseLeave = () => setCursorVisible(false);
+
+        const section = document.getElementById("faq");
+        if (section && isMounted) {
+            section.addEventListener("mousemove", handleMouseMove);
+            section.addEventListener("mouseenter", handleMouseEnter);
+            section.addEventListener("mouseleave", handleMouseLeave);
+
+            return () => {
+                section.removeEventListener("mousemove", handleMouseMove);
+                section.removeEventListener("mouseenter", handleMouseEnter);
+                section.removeEventListener("mouseleave", handleMouseLeave);
+            };
+        }
+    }, [isMounted]);
 
     useEffect(() => {
         setIsMounted(true);
@@ -22,7 +47,21 @@ export default function FaqSection() {
             className="py-16 md:py-24 bg-gradient-to-b from-white to-blue-50 relative overflow-hidden"
             id="faq"
         >
-            {/* Background Elements */}
+            <motion.div
+                className="fixed w-6 h-6 bg-gradient-to-r from-sky-400 to-indigo-500 rounded-full mix-blend-multiply filter blur-md opacity-50 pointer-events-none z-50"
+                style={{
+                    left: mousePosition.x,
+                    top: mousePosition.y,
+                    opacity: cursorVisible ? 0.5 : 0,
+                }}
+                animate={{
+                    scale: [1, 1.2, 1],
+                }}
+                transition={{
+                    duration: 1.5,
+                    repeat: Infinity,
+                }}
+            />
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <motion.div
                     className="absolute -top-20 -right-20 w-64 h-64 bg-pink-200/30 rounded-full filter blur-3xl"
@@ -72,7 +111,7 @@ export default function FaqSection() {
                 </div>
 
                 {/* Floating Tiny Elements */}
-                {[...Array(8)].map((_, i) => (
+                {[...Array(100)].map((_, i) => (
                     <motion.div
                         key={i}
                         className="absolute w-1 h-1 bg-blue-400 rounded-full"
@@ -154,7 +193,7 @@ export default function FaqSection() {
                                     {
                                         question:
                                             "Apakah saya perlu laptop spesifikasi tinggi?",
-                                        answer: "Sebenarnya, laptop cukeram untuk menjalankan Instagram dan TikTok sudah lebih dari cukup. Toh, programmer sejati lebih fokus pada konsep, bukan pada hal-hal sepele seperti 'menjalankan program' atau 'kompilasi kode'. Jika laptop Anda bisa menampilkan meme programming, Anda sudah siap bergabung dengan IMPHNEN. RGB lighting opsional, tapi sangat direkomendasikan untuk meningkatkan kemampuan 'programming tanpa coding'.",
+                                        answer: "Sebenarnya, laptop cukeram untuk menjalankan fesbuk saya sudah cukup bahkan intel celeron juga sudah lebih dari cukup. Toh, programmer sejati lebih fokus pada konsep, bukan pada hal-hal sepele seperti 'menjalankan program' atau 'kompilasi kode'. Jika laptop Anda bisa menampilkan meme programming, Anda sudah siap bergabung dengan IMPHNEN. RGB lighting opsional, tapi sangat direkomendasikan untuk meningkatkan kemampuan 'programming tanpa coding'.",
                                         emoji: "💻",
                                     },
                                     {
