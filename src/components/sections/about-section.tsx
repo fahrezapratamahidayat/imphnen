@@ -2,7 +2,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
 import { Button } from "../ui/button";
-import Link from "next/link";
 
 const TiltCard = ({
     children,
