@@ -314,7 +314,7 @@ const tabDescriptions = {
 };
 
 export default function FiturTabs() {
-    const [activeTab, setActiveTab] = useState("all");
+    const [activeTab, setActiveTab] = useState("pemula");
 
     const filteredFitur = fiturData.filter((fitur) =>
         fitur.category.includes(activeTab)
