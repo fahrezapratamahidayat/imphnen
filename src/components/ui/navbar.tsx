@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -90,10 +89,10 @@ export function Navbar() {
             }
 
             const sections = [
-                "",
+                "hero",
                 "about",
                 "features",
-
+                "community",
                 "testimonials",
                 "faq",
                 "contact",
@@ -121,7 +120,6 @@ export function Navbar() {
         { label: "Komunitas", href: "#community" },
         { label: "Testimoni", href: "#testimonials" },
         { label: "FAQ", href: "#faq" },
-        { label: "Kontak", href: "#contact" },
     ];
 
     return (
@@ -149,7 +147,7 @@ export function Navbar() {
                                 </motion.div>
 
                                 <div className="relative overflow-hidden">
-                                    <span className="text-xl font-bold bg-gradient-to-r from-sky-500 to-blue-600 bg-clip-text text-transparent">
+                                    <span className="text-xl font-bold bg-gradient-to-r from-sky-500 to-blue-600 bg-clip-text text-transparent sm:hidden lg:block">
                                         IMPHNEN
                                     </span>
                                     <motion.div
@@ -280,7 +278,6 @@ export function Navbar() {
                             </motion.button> */}
                         </div>
 
-                        {/* Mobile Menu Button */}
                         <motion.button
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
@@ -315,7 +312,6 @@ export function Navbar() {
                         </motion.button>
                     </div>
 
-                    {/* Mobile Menu with animation */}
                     <AnimatePresence>
                         {mobileMenuOpen && (
                             <motion.div
