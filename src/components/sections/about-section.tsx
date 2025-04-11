@@ -93,7 +93,6 @@ export default function AboutSection() {
     const rotate1 = useTransform(scrollYProgress, [0, 1], [0, 20]);
     const rotate2 = useTransform(scrollYProgress, [0, 1], [0, -20]);
 
-    // Custom cursor effect
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
     const [cursorVisible, setCursorVisible] = useState(false);
 
@@ -126,7 +125,7 @@ export default function AboutSection() {
         >
             <div className="relative" ref={ref}>
                 <motion.div
-                    className="fixed w-6 h-6 bg-gradient-to-r from-sky-400 to-indigo-500 rounded-full mix-blend-multiply filter blur-md opacity-50 pointer-events-none z-50"
+                    className="fixed w-6 h-6 bg-gradient-to-r from-sky-400 to-indigo-500 rounded-full mix-blend-multiply filter blur-md opacity-50 pointer-events-none z-50 sm:block hidden"
                     style={{
                         left: mousePosition.x,
                         top: mousePosition.y,
@@ -957,8 +956,6 @@ export default function AboutSection() {
                                                     </div>
                                                 </TiltCard>
                                             </motion.div>
-
-                                            {/* Text Column with better styling */}
                                             <motion.div
                                                 className="md:w-3/5"
                                                 initial={{
@@ -998,8 +995,6 @@ export default function AboutSection() {
                                 </div>
                             </div>
                         </div>
-
-                        {/* Join the Movement - CTA with tilted design */}
                         <motion.div
                             className="bg-white rounded-2xl p-8 md:p-10 shadow-xl relative overflow-hidden border border-gray-100 transform rotate-1"
                             initial={{ opacity: 0, y: 30 }}
@@ -1007,7 +1002,6 @@ export default function AboutSection() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.8 }}
                         >
-                            {/* Floating blobs */}
                             <motion.div
                                 className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-sky-100 to-indigo-100 rounded-full opacity-70"
                                 animate={{
