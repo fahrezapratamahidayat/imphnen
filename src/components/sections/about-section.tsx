@@ -287,9 +287,9 @@ export default function AboutSection() {
 
                                 <p className="text-gray-600 max-w-3xl mx-auto text-lg md:text-xl leading-relaxed">
                                     Gerakan revolusioner yang mendobrak
-                                    paradigma &quot;programmer harus
-                                    coding&quot; dengan pendekatan berbasis
-                                    konsep dan mindset.
+                                    paradigma &quot;programmer harus tidak harus
+                                    ngoding&quot; dengan pendekatan
+                                    bermalas-malasan.
                                 </p>
                             </motion.div>
                         </div>
