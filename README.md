@@ -116,5 +116,5 @@ IMPHNEN - [@imphnen](https://twitter.com/imphnen) - info@imphnen.com
 <div align="center">
   <sub>Built with ❤️ and minimal coding by IMPHNEN</sub>
   <br>
-  <sub>Konsep adalah segalanya. Implementasi hanya detail.</sub>
+  <sub>Konsep adalah segalanya. Implementasi hanya detail. ANJAY</sub>
 </div>
