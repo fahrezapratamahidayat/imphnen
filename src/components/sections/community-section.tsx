@@ -615,11 +615,11 @@ export default function CommunitySection() {
 
     return (
         <section
-            className="py-20 overflow-hidden bg-gradient-to-b from-white to-gray-50"
+            className="relative py-20 overflow-hidden bg-gradient-to-b from-white to-gray-50"
             id="community"
         >
             <motion.div
-                className="fixed w-6 h-6 bg-gradient-to-r from-sky-400 to-indigo-500 rounded-full mix-blend-multiply filter blur-md opacity-50 pointer-events-none z-[999px] bg-red-500"
+                className="fixed w-6 h-6 bg-gradient-to-r from-sky-400 to-indigo-500 rounded-full mix-blend-multiply filter blur-md opacity-50 pointer-events-none z-[999px] bg-red-500 sm:block hidden"
                 style={{
                     left: mousePosition.x,
                     top: mousePosition.y,
@@ -633,12 +633,12 @@ export default function CommunitySection() {
                     repeat: Infinity,
                 }}
             />
-            {/* <div className="absolute top-0 right-0 w-96 h-96 bg-blue-50 rounded-full filter blur-3xl opacity-50 transform translate-x-1/3 -translate-y-1/3"></div> */}
+            <div className="absolute top-0 right-0 w-96 h-96 bg-blue-50 rounded-full filter blur-3xl opacity-50 transform translate-x-1/3 -translate-y-1/3"></div>
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-indigo-50 rounded-full filter blur-3xl opacity-50 transform -translate-x-1/3 translate-y-1/3"></div>
             <div className="absolute top-1/2 left-1/4 w-72 h-72 bg-purple-50 rounded-full filter blur-3xl opacity-40 transform -translate-x-1/2 -translate-y-1/2"></div>
 
             <motion.div
-                className="absolute top-1/4 left-10 md:left-20 z-0"
+                className="absolute top-1/4 left-10 md:left-20 z-0 sm:block hidden"
                 animate={{
                     y: [0, -15, 0],
                     rotate: [0, -5, 0],
