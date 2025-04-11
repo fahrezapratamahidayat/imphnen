@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Button } from "../ui/button";
 import {
     Accordion,
     AccordionContent,
@@ -291,49 +290,6 @@ export default function FaqSection() {
                                 ))}
                             </Accordion>
                         </motion.div>
-
-                        {/* Additional FAQ Call-to-action */}
-                        {/* <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: 0.5 }}
-                            viewport={{ once: true }}
-                            className="mt-12 bg-white p-8 rounded-xl shadow-md text-center relative overflow-hidden"
-                        >
-                            <div className="absolute top-0 right-0 w-64 h-64 bg-blue-100/50 rounded-full -mr-32 -mt-32"></div>
-                            <div className="absolute bottom-0 left-0 w-64 h-64 bg-indigo-100/50 rounded-full -ml-32 -mb-32"></div>
-
-                            <div className="relative z-10">
-                                <h3 className="text-xl font-bold text-gray-800 mb-2">
-                                    Masih penasaran?
-                                </h3>
-                                <p className="text-gray-600 mb-6">
-                                    Kami punya banyak jawaban (kebanyakan tidak
-                                    berguna sih) untuk pertanyaan Anda yang lain
-                                </p>
-                                <div className="flex flex-wrap gap-3 justify-center">
-                                    <motion.div
-                                        whileHover={{ scale: 1.05 }}
-                                        whileTap={{ scale: 0.95 }}
-                                    >
-                                        <Button className="bg-sky-500 hover:bg-sky-600 text-white">
-                                            Tanya via Discord
-                                        </Button>
-                                    </motion.div>
-                                    <motion.div
-                                        whileHover={{ scale: 1.05 }}
-                                        whileTap={{ scale: 0.95 }}
-                                    >
-                                        <Button
-                                            variant="outline"
-                                            className="border-sky-500 text-sky-500 hover:bg-sky-50"
-                                        >
-                                            Kirim Pertanyaan
-                                        </Button>
-                                    </motion.div>
-                                </div>
-                            </div>
-                        </motion.div> */}
                     </div>
                 </motion.div>
             </div>
