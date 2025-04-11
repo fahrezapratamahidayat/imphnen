@@ -821,46 +821,6 @@ export default function CommunitySection() {
                         community={communities[activeTab]}
                         isVisible={true}
                     />
-
-                    {/* CTA Section */}
-                    {/* <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
-                        className="text-center mt-12 max-w-3xl mx-auto"
-                    >
-                        <h3 className="text-2xl font-bold mb-4 text-gray-800">
-                            Tidak yakin join{" "}
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-indigo-500">
-                                IMPHNEN
-                            </span>
-                            ?
-                        </h3>
-                        <p className="text-gray-600 mb-8">
-                            ikuti kami untuk bermalasan-malasan dan bersama
-                            IMPHNEN kita scroll fesbuk
-                        </p>
-                        <div className="flex flex-wrap justify-center gap-4">
-                            {communities.map((community, idx) => (
-                                <motion.div
-                                    key={idx}
-                                    whileHover={{ scale: 1.05, y: -3 }}
-                                    whileTap={{ scale: 0.95 }}
-                                >
-                                    <Link
-                                        href={community.link}
-                                        className={`inline-flex items-center gap-2 px-6 py-3 text-white rounded-full shadow-md bg-gradient-to-r ${community.gradient}`}
-                                    >
-                                        <span className="text-white">
-                                            {renderIcon(community.icon, 5)}
-                                        </span>
-                                        <span>Join {community.name}</span>
-                                    </Link>
-                                </motion.div>
-                            ))}
-                        </div>
-                    </motion.div> */}
                 </div>
             </div>
         </section>
