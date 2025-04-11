@@ -40,7 +40,7 @@ export default function HeroSection() {
         >
             <div className="relative" ref={ref}>
                 <motion.div
-                    className="fixed w-6 h-6 bg-gradient-to-r from-sky-400 to-indigo-500 rounded-full mix-blend-multiply filter blur-md opacity-50 pointer-events-none z-50 bg-red-500"
+                    className="fixed w-6 h-6 bg-gradient-to-r from-sky-400 to-indigo-500 rounded-full mix-blend-multiply filter blur-md opacity-50 pointer-events-none z-50 sm:block hidden"
                     style={{
                         left: mousePosition.x,
                         top: mousePosition.y,
