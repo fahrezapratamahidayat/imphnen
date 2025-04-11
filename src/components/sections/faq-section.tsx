@@ -48,7 +48,7 @@ export default function FaqSection() {
             id="faq"
         >
             <motion.div
-                className="fixed w-6 h-6 bg-gradient-to-r from-sky-400 to-indigo-500 rounded-full mix-blend-multiply filter blur-md opacity-50 pointer-events-none z-50"
+                className="fixed w-6 h-6 bg-gradient-to-r from-sky-400 to-indigo-500 rounded-full mix-blend-multiply filter blur-md opacity-50 pointer-events-none z-50 sm:block hidden"
                 style={{
                     left: mousePosition.x,
                     top: mousePosition.y,
@@ -82,8 +82,7 @@ export default function FaqSection() {
                     }}
                 />
 
-                {/* Decorative Elements */}
-                <div className="absolute top-1/4 right-[10%] opacity-10">
+                <div className="absolute top-1/4 right-[10%] opacity-10 sm:block hidden">
                     <motion.div
                         className="text-6xl"
                         animate={{ rotate: [0, 10, 0] }}
@@ -96,7 +95,7 @@ export default function FaqSection() {
                         ❓
                     </motion.div>
                 </div>
-                <div className="absolute bottom-1/4 left-[5%] opacity-10">
+                <div className="absolute bottom-1/4 left-[5%] opacity-10 sm:block hidden">
                     <motion.div
                         className="text-6xl"
                         animate={{ rotate: [0, -10, 0] }}
@@ -110,8 +109,7 @@ export default function FaqSection() {
                     </motion.div>
                 </div>
 
-                {/* Floating Tiny Elements */}
-                {[...Array(100)].map((_, i) => (
+                {[...Array(50)].map((_, i) => (
                     <motion.div
                         key={i}
                         className="absolute w-1 h-1 bg-blue-400 rounded-full"
@@ -295,7 +293,7 @@ export default function FaqSection() {
                         </motion.div>
 
                         {/* Additional FAQ Call-to-action */}
-                        <motion.div
+                        {/* <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.5 }}
@@ -335,50 +333,7 @@ export default function FaqSection() {
                                     </motion.div>
                                 </div>
                             </div>
-                        </motion.div>
-
-                        {/* Fun facts */}
-                        <div className="grid grid-cols-3 gap-4 mt-12">
-                            {[
-                                {
-                                    stat: "98%",
-                                    desc: "Alumni tidak pernah menulis kode nyata",
-                                    emoji: "🤹‍♂️",
-                                },
-                                {
-                                    stat: "100%",
-                                    desc: "Tweet tentang coding daripada coding",
-                                    emoji: "🐦",
-                                },
-                                {
-                                    stat: "∞",
-                                    desc: "Alasan kenapa tidak bisa ngoding hari ini",
-                                    emoji: "🧩",
-                                },
-                            ].map((fact, i) => (
-                                <motion.div
-                                    key={i}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    transition={{
-                                        duration: 0.4,
-                                        delay: i * 0.1 + 0.3,
-                                    }}
-                                    viewport={{ once: true }}
-                                    className="bg-white rounded-lg p-4 text-center shadow-md"
-                                >
-                                    <div className="text-2xl mb-1">
-                                        {fact.emoji}
-                                    </div>
-                                    <div className="text-2xl font-bold text-sky-500">
-                                        {fact.stat}
-                                    </div>
-                                    <div className="text-sm text-gray-600">
-                                        {fact.desc}
-                                    </div>
-                                </motion.div>
-                            ))}
-                        </div>
+                        </motion.div> */}
                     </div>
                 </motion.div>
             </div>
