@@ -177,7 +177,6 @@ const GlowingIcon = ({
 );
 
 export default function FiturSection() {
-    // Parallax scrolling effect
     const ref = useRef(null);
     const { scrollYProgress } = useScroll({
         target: ref,
@@ -243,7 +242,7 @@ export default function FiturSection() {
         >
             <div className="relative " ref={ref}>
                 <motion.div
-                    className="fixed w-6 h-6 bg-gradient-to-r from-sky-400 to-indigo-500 rounded-full mix-blend-multiply filter blur-md opacity-50 pointer-events-none z-50 bg-red-500"
+                    className="fixed w-6 h-6 bg-gradient-to-r from-sky-400 to-indigo-500 rounded-full mix-blend-multiply filter blur-md opacity-50 pointer-events-none z-50 bg-red-500 sm:block hidden"
                     style={{
                         left: mousePosition.x,
                         top: mousePosition.y,
@@ -316,7 +315,7 @@ export default function FiturSection() {
                     </svg>
                 </div>
                 <motion.div
-                    className="absolute top-20 right-[10%] text-7xl opacity-20"
+                    className="absolute top-20 right-[10%] text-7xl opacity-20 sm:block hidden"
                     style={{ y: y1, rotate: rotate1 }}
                 >
                     <motion.div
@@ -327,7 +326,7 @@ export default function FiturSection() {
                     </motion.div>
                 </motion.div>
                 <motion.div
-                    className="absolute bottom-20 left-[10%] text-6xl opacity-20"
+                    className="absolute bottom-20 left-[10%] text-6xl opacity-20 sm:block hidden"
                     style={{ y: y2, rotate: rotate2 }}
                 >
                     <motion.div
@@ -338,7 +337,7 @@ export default function FiturSection() {
                     </motion.div>
                 </motion.div>
                 <motion.div
-                    className="absolute top-1/3 left-[15%] text-6xl opacity-20"
+                    className="absolute top-1/3 left-[15%] text-6xl opacity-20 sm:block hidden"
                     style={{ y: y1, rotate: rotate2 }}
                 >
                     <motion.div
