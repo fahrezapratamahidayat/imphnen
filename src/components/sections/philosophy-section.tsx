@@ -660,8 +660,6 @@ export default function PhilosophySection() {
                                                     <div className="absolute inset-0 bg-gradient-to-br from-sky-400/10 to-indigo-400/10 rounded-full filter blur-xl"></div>
                                                 </div>
                                             </motion.div>
-
-                                            {/* Outer glow */}
                                             <div className="absolute inset-12 bg-gradient-to-r from-sky-400/5 to-indigo-400/5 rounded-full filter blur-2xl"></div>
 
                                             {/* Knowledge particles with trailing effect */}
@@ -861,8 +859,6 @@ export default function PhilosophySection() {
                                                 </div>
                                             </motion.div>
                                         ))}
-
-                                        {/* Connection lines between tags */}
                                         <svg
                                             className="absolute inset-0 w-full h-full pointer-events-none"
                                             viewBox="0 0 400 400"
@@ -916,11 +912,9 @@ export default function PhilosophySection() {
                                     </div>
                                 </motion.div>
 
-                                {/* Decorative elements around the 3D card */}
                                 <div className="absolute -top-5 -right-5 w-10 h-10 bg-gradient-to-r from-sky-200 to-indigo-200 rounded-full opacity-70"></div>
                                 <div className="absolute -bottom-3 -left-3 w-6 h-6 bg-gradient-to-r from-sky-300 to-indigo-300 rounded-full opacity-70"></div>
 
-                                {/* Floating code snippets */}
                                 <motion.div
                                     className="absolute -left-16 top-1/4 bg-white p-2 rounded-lg shadow-lg text-xs font-mono text-gray-700 max-w-[140px] hidden md:block"
                                     initial={{ opacity: 0, x: -20 }}
@@ -957,7 +951,6 @@ export default function PhilosophySection() {
                             </div>
                         </motion.div>
 
-                        {/* Right column - Philosophy text with enhanced styling */}
                         <motion.div
                             initial={{ opacity: 0, x: 20 }}
                             whileInView={{ opacity: 1, x: 0 }}
@@ -997,7 +990,6 @@ export default function PhilosophySection() {
                                     </p>
                                 </motion.div>
 
-                                {/* Quote with tilted card */}
                                 <TiltCard rotate={-1} scale={1.03}>
                                     <motion.div
                                         className="py-6 px-8 bg-gradient-to-r from-sky-50 to-indigo-50 rounded-xl relative shadow-md"
@@ -1102,7 +1094,6 @@ export default function PhilosophySection() {
                         </motion.div>
                     </div>
 
-                    {/* Additional highlight section */}
                     <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-6">
                         {[
                             {
@@ -1158,7 +1149,6 @@ export default function PhilosophySection() {
                         ))}
                     </div>
 
-                    {/* Animated progress path */}
                     <div className="mt-16 relative hidden md:block">
                         <div className="h-20 mx-auto relative">
                             <svg
