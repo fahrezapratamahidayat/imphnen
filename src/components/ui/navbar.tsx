@@ -100,7 +100,6 @@ export function Navbar() {
                 const element = document.getElementById(section);
                 if (element) {
                     const rect = element.getBoundingClientRect();
-                    console.log(rect);
                     if (rect.top <= 100 && rect.bottom >= 100) {
                         setActiveLink(section ? `#${section}` : "#");
                         break;
