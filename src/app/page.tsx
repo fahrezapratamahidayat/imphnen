@@ -1,3 +1,4 @@
+"use client";
 import { Navbar } from "@/components/ui/navbar";
 import CommunitySection from "@/components/sections/community-section";
 import HeroSection from "@/components/sections/hero-section";
@@ -7,10 +8,10 @@ import FaqSection from "@/components/sections/faq-section";
 import FooterSection from "@/components/sections/footer-section";
 import AboutSection from "@/components/sections/about-section";
 import TestymonialSection from "@/components/sections/testymonial-section";
-
+import { DeviceAlertDialog } from "@/components/ui/alert-dialog";
 export default function Home() {
     return (
-        <div className=" ">
+        <div className="">
             <main className="">
                 <Navbar />
                 <HeroSection />
@@ -21,6 +22,7 @@ export default function Home() {
                 <TestymonialSection />
                 <FaqSection />
                 <FooterSection />
+                <DeviceAlertDialog />
             </main>
         </div>
     );
