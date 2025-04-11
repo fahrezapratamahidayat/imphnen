@@ -252,3 +252,8 @@
 .transform-gpu {
     transform: translateZ(0);
 }
+
+/* Hide the original title from TestimonialSlider */
+#testimonials .max-w-5xl > h3 {
+    display: none;
+}
