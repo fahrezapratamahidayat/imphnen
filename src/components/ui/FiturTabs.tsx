@@ -491,8 +491,6 @@ export default function FiturTabs() {
                                     <p className="text-gray-600 mb-5">
                                         {fitur.description}
                                     </p>
-
-                                    {/* Satirical note dengan border dashed */}
                                     <div className="border-2 border-dashed border-amber-200 rounded-lg p-4 bg-amber-50/50 relative">
                                         <div className="flex gap-3">
                                             <div className="text-amber-500 text-xl pt-0.5">
@@ -526,21 +524,6 @@ export default function FiturTabs() {
                     </p>
                 </div>
             )}
-
-            {/* Add custom animations */}
-            <style jsx global>{`
-                @keyframes dash {
-                    to {
-                        stroke-dashoffset: -24;
-                    }
-                }
-                .animate-dash {
-                    animation: dash 20s linear infinite;
-                }
-                .transform-gpu {
-                    transform: translateZ(0);
-                }
-            `}</style>
         </div>
     );
 }
