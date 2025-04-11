@@ -111,7 +111,6 @@ export default function TestimonialSlider() {
         }),
     };
 
-    // Background floating elements
     const FloatingElement = ({
         children,
         className = "",
@@ -153,12 +152,10 @@ export default function TestimonialSlider() {
                 🚀
             </FloatingElement>
 
-            {/* Blob decoration */}
             <div className="absolute -top-10 -right-20 w-64 h-64 rounded-full bg-gradient-to-br from-blue-100/30 to-sky-100/30 blur-3xl"></div>
             <div className="absolute -bottom-20 -left-10 w-56 h-56 rounded-full bg-gradient-to-br from-indigo-100/30 to-purple-100/30 blur-3xl"></div>
 
             <div className="relative">
-                {/* Slider content */}
                 <div className="overflow-hidden relative h-[400px] md:h-[340px] perspective-1000">
                     <AnimatePresence
                         initial={false}
@@ -181,7 +178,6 @@ export default function TestimonialSlider() {
                                     className={`${testimonials[current].backgroundColor} rounded-xl p-8 transform -rotate-1 backdrop-blur-sm`}
                                 >
                                     <div className="flex flex-col md:flex-row items-center gap-6">
-                                        {/* Avatar with fun decorations */}
                                         <div className="shrink-0">
                                             <div className="relative group">
                                                 <div className="w-24 h-24 bg-white rounded-2xl rotate-6 overflow-hidden shadow-lg border-2 border-white flex items-center justify-center transform transition-transform group-hover:rotate-0 duration-300">
@@ -194,7 +190,6 @@ export default function TestimonialSlider() {
                                                     </div>
                                                 </div>
 
-                                                {/* Badge */}
                                                 <div className="absolute -bottom-4 -right-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-full w-10 h-10 flex items-center justify-center text-xs shadow-md transform transition-transform group-hover:scale-110 duration-300">
                                                     <svg
                                                         className="w-5 h-5"
@@ -209,7 +204,6 @@ export default function TestimonialSlider() {
                                                     </svg>
                                                 </div>
 
-                                                {/* Pro badge */}
                                                 <div className="absolute -top-3 -left-3 bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-lg px-3 py-1 text-xs shadow-md transform -rotate-12 transition-transform group-hover:rotate-0 duration-300 flex items-center">
                                                     <span className="mr-1">
                                                         IMPHNEN PRO
@@ -229,7 +223,6 @@ export default function TestimonialSlider() {
                                             </div>
                                         </div>
 
-                                        {/* Content with enhanced styling */}
                                         <div className="flex-1">
                                             <div className="relative">
                                                 <svg
@@ -302,7 +295,6 @@ export default function TestimonialSlider() {
                     </AnimatePresence>
                 </div>
 
-                {/* Navigation buttons - styled with gradient */}
                 <button
                     onClick={handlePrev}
                     className="absolute -left-5 top-1/2 -translate-y-1/2 bg-white border border-gray-100 w-12 h-12 rounded-full shadow-lg flex items-center justify-center text-gray-700 hover:scale-110 z-10 transition-transform duration-300"
@@ -323,7 +315,6 @@ export default function TestimonialSlider() {
                     </div>
                 </button>
 
-                {/* Indicator dots with gradient active state */}
                 <div className="flex justify-center mt-8 gap-2">
                     {testimonials.map((_, index) => (
                         <button
@@ -343,7 +334,6 @@ export default function TestimonialSlider() {
                 </div>
             </div>
 
-            {/* Disclaimer - uncomment if needed */}
             <p className="text-center text-gray-500 mt-6 text-xs italic">
                 IMPHNEN tidak bertanggung jawab jika Anda kecanduan scroll
                 fesbuk
