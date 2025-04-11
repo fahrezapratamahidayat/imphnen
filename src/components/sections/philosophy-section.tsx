@@ -242,7 +242,7 @@ export default function PhilosophySection() {
             id="philosophy"
         >
             <motion.div
-                className="fixed w-6 h-6 bg-gradient-to-r from-sky-400 to-indigo-500 rounded-full mix-blend-multiply filter blur-md opacity-50 pointer-events-none z-50"
+                className="fixed w-6 h-6 bg-gradient-to-r from-sky-400 to-indigo-500 rounded-full mix-blend-multiply filter blur-md opacity-50 pointer-events-none z-50 sm:block hidden"
                 style={{
                     left: mousePosition.x,
                     top: mousePosition.y,
@@ -500,7 +500,7 @@ export default function PhilosophySection() {
                                     </h2>
 
                                     <div className="flex justify-center space-x-3 text-gray-500 flex-wrap flex-col items-center">
-                                        <div className="flex flex-wrap gap-2">
+                                        <div className="flex  gap-2">
                                             {[
                                                 "Berpikir",
                                                 "Memahami",
@@ -536,7 +536,6 @@ export default function PhilosophySection() {
                     </div>
 
                     <div className="flex flex-col-reverse md:flex-row items-center gap-8 md:gap-16">
-                        {/* Left column - Brain visualization with enhanced 3D effect */}
                         <motion.div
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
@@ -545,7 +544,6 @@ export default function PhilosophySection() {
                             className="md:w-1/2"
                         >
                             <div className="relative perspective-element">
-                                {/* 3D Card */}
                                 <motion.div
                                     whileHover={{
                                         transform: `perspective(1000px) rotateX(5deg) rotateY(-5deg)`,
