@@ -10,8 +10,6 @@ export default function FooterSection() {
         >
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <div className="absolute inset-0 opacity-10 bg-grid-pattern"></div>
-
-                {/* Gradient Orbs */}
                 <div className="absolute top-0 left-1/4 w-72 h-72 bg-sky-200 rounded-full filter blur-3xl opacity-50"></div>
                 <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-indigo-200 rounded-full filter blur-3xl opacity-50"></div>
 
@@ -57,7 +55,6 @@ export default function FooterSection() {
 
             <div className="container mx-auto px-4 relative z-10">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-16">
-                    {/* Brand Column */}
                     <div className="col-span-1 md:col-span-1">
                         <div className="flex flex-col">
                             <motion.div
@@ -207,44 +204,6 @@ export default function FooterSection() {
                         </div>
                     ))}
                 </div>
-
-                {/* Newsletter */}
-                {/* <div className="border-t border-gray-100 pt-10 pb-8">
-                    <div className="flex flex-col md:flex-row md:items-center justify-between">
-                        <div className="md:w-1/2 mb-6 md:mb-0">
-                            <h3 className="text-lg font-semibold mb-2">
-                                Subscribe Newsletter
-                            </h3>
-                            <p className="text-gray-600 text-sm">
-                                Dapatkan update mingguan dengan tips
-                                &quot;coding tanpa coding&quot; dan meme
-                                programming terbaik!
-                            </p>
-                        </div>
-
-                        <div className="md:w-1/2">
-                            <div className="flex">
-                                <input
-                                    type="email"
-                                    placeholder="Email kamu"
-                                    className="bg-white border border-gray-200 rounded-l-lg px-4 py-3 w-full focus:outline-none focus:ring-2 focus:ring-sky-500 text-sm"
-                                />
-                                <motion.button
-                                    whileHover={{ scale: 1.05 }}
-                                    whileTap={{ scale: 0.95 }}
-                                    className="bg-gradient-to-r from-sky-500 to-indigo-500 hover:from-sky-600 hover:to-indigo-600 text-white px-4 py-3 rounded-r-lg font-medium text-sm"
-                                >
-                                    Subscribe
-                                </motion.button>
-                            </div>
-                            <p className="text-gray-500 text-xs mt-2">
-                                Kami tidak akan mengirim email coding tutorial
-                                karena...yah, Anda tahu alasannya.
-                            </p>
-                        </div>
-                    </div>
-                </div> */}
-
                 <div className="border-t border-gray-100 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center">
                     <div className="text-gray-500 text-sm mb-4 md:mb-0">
                         <span>Made with 🧠 by IMPHNEN</span>
