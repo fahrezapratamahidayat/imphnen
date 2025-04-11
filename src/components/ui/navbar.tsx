@@ -95,12 +95,12 @@ export function Navbar() {
                 "community",
                 "testimonials",
                 "faq",
-                "contact",
             ];
             for (const section of sections) {
-                const element = document.getElementById(section || "hero");
+                const element = document.getElementById(section);
                 if (element) {
                     const rect = element.getBoundingClientRect();
+                    console.log(rect);
                     if (rect.top <= 100 && rect.bottom >= 100) {
                         setActiveLink(section ? `#${section}` : "#");
                         break;
@@ -114,7 +114,7 @@ export function Navbar() {
     }, []);
 
     const navigationItems = [
-        { label: "Beranda", href: "#" },
+        { label: "Beranda", href: "#hero" },
         { label: "Tentang Kami", href: "#about" },
         { label: "Fitur", href: "#features" },
         { label: "Komunitas", href: "#community" },
