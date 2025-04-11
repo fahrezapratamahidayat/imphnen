@@ -293,12 +293,8 @@ export default function AboutSection() {
                                 </p>
                             </motion.div>
                         </div>
-
-                        {/* Main Content */}
                         <div className="mb-20">
-                            {/* Origin Story - 2 Column Layout with 3D Tilt effect */}
                             <div className="flex flex-col md:flex-row items-center gap-10 md:gap-16 mb-24">
-                                {/* Left Column - Image with 3D tilt */}
                                 <motion.div
                                     className="md:w-1/2"
                                     initial={{ opacity: 0, x: -30 }}
@@ -387,8 +383,6 @@ export default function AboutSection() {
                                         >
                                             {"/* No code needed */"}
                                         </motion.div>
-
-                                        {/* Added code snippet floating element */}
                                         <motion.div
                                             className="absolute -left-10 bottom-20 w-28 h-28 bg-black text-green-400 rounded-lg shadow-lg p-3 font-mono text-[9px] flex items-center justify-center transform -rotate-6 opacity-80"
                                             animate={{
@@ -425,7 +419,6 @@ export default function AboutSection() {
                                     </TiltCard>
                                 </motion.div>
 
-                                {/* Right Column - Text Content with gradient text */}
                                 <motion.div
                                     className="md:w-1/2"
                                     initial={{ opacity: 0, x: 30 }}
@@ -488,8 +481,6 @@ export default function AboutSection() {
                                     </TiltCard>
                                 </motion.div>
                             </div>
-
-                            {/* Our Mission - Centered Layout with Tilted Cards */}
                             <div className="mb-24 text-center">
                                 <motion.div
                                     initial={{ opacity: 0, y: 20 }}
@@ -573,7 +564,6 @@ export default function AboutSection() {
                                 </div>
                             </div>
 
-                            {/* How It Works - 3 Column Layout dengan koneksi animasi */}
                             <div className="mb-24">
                                 <div className="text-center mb-12">
                                     <motion.div
@@ -597,7 +587,6 @@ export default function AboutSection() {
                                 </div>
 
                                 <div className="relative">
-                                    {/* Animated connection line */}
                                     <div className="hidden md:block absolute top-1/2 left-0 right-0 z-0 h-2 overflow-hidden">
                                         <motion.div
                                             className="h-full bg-gradient-to-r from-sky-400 via-blue-500 to-indigo-600 w-full"
@@ -714,7 +703,6 @@ export default function AboutSection() {
                                 </div>
                             </div>
 
-                            {/* Values and Principles - Alternating Layout with nicer visuals */}
                             <div>
                                 <div className="text-center mb-16">
                                     <motion.div
@@ -791,7 +779,6 @@ export default function AboutSection() {
                                                     : "md:flex-row"
                                             } items-center gap-10 md:gap-16`}
                                         >
-                                            {/* Image Column - now with nicer 3D tilt */}
                                             <motion.div
                                                 className="md:w-2/5"
                                                 initial={{
