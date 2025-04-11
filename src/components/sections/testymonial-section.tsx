@@ -57,7 +57,6 @@ export default function TestymonialSection() {
                 }}
             />
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                {/* Gradient Blobs */}
                 <motion.div
                     className="absolute top-0 left-1/4 w-96 h-96 bg-sky-100/50 rounded-full filter blur-3xl"
                     animate={{ scale: [1, 1.2, 1], y: [0, -30, 0] }}
@@ -153,7 +152,6 @@ export default function TestymonialSection() {
 
             <div className="container mx-auto px-4 relative z-10">
                 <div className="max-w-6xl mx-auto">
-                    {/* Section Header */}
                     <div className="text-center mb-16 relative">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
@@ -162,11 +160,9 @@ export default function TestymonialSection() {
                             transition={{ duration: 0.6 }}
                             className="relative"
                         >
-                            {/* Decorative Lines */}
                             <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-12 w-px h-8 bg-gradient-to-b from-transparent to-sky-300"></div>
                             <div className="absolute left-1/2 -bottom-12 -translate-x-1/2 w-px h-8 bg-gradient-to-t from-transparent to-sky-300"></div>
 
-                            {/* Headline with 3D effect */}
                             <div className="relative inline-block">
                                 <div className="absolute -inset-0.5 bg-gradient-to-r from-sky-500 to-indigo-500 rounded-lg blur opacity-50 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
                                 <div className="relative inline-block bg-gradient-to-r from-sky-500 to-indigo-500 text-white px-6 py-2 rounded-lg text-sm font-medium mb-4 transform -rotate-2 shadow-md">
@@ -181,7 +177,6 @@ export default function TestymonialSection() {
                                 </span>
                             </h2>
 
-                            {/* Accent Graphic */}
                             <div className="inline-block relative">
                                 <p className="text-gray-600 max-w-3xl mx-auto text-lg">
                                     Kisah mereka yang yang sudah join{" "}
