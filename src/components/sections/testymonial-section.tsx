@@ -42,7 +42,7 @@ export default function TestymonialSection() {
             className="py-20 md:py-28 bg-gradient-to-b from-white to-blue-50 relative overflow-hidden"
         >
             <motion.div
-                className="fixed w-6 h-6 bg-gradient-to-r from-sky-400 to-indigo-500 rounded-full mix-blend-multiply filter blur-md opacity-50 pointer-events-none z-50"
+                className="fixed w-6 h-6 bg-gradient-to-r from-sky-400 to-indigo-500 rounded-full mix-blend-multiply filter blur-md opacity-50 pointer-events-none z-50 sm:block hidden"
                 style={{
                     left: mousePosition.x,
                     top: mousePosition.y,
@@ -269,7 +269,6 @@ export default function TestymonialSection() {
                         ))}
                     </div>
 
-                    {/* Custom Title Wrapper that Hides the Original Title */}
                     <div className="relative mb-10">
                         <div className="absolute inset-0 flex items-center">
                             <div className="h-px w-full bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
@@ -278,25 +277,16 @@ export default function TestymonialSection() {
                             <div className="bg-white px-6 py-2 rounded-full border border-gray-100 shadow-sm transform -rotate-1">
                                 <h3 className="font-bold text-xl text-gray-800 flex items-center">
                                     <span className="text-sky-500 mr-2">#</span>
-                                    <span>SuaraAnggota</span>
+                                    <span>SuaraMember</span>
                                     <span className="text-sky-500 ml-2">#</span>
                                 </h3>
                             </div>
                         </div>
                     </div>
 
-                    {/* TestimonialSlider Component with Original Title Hidden */}
                     <div className="relative">
-                        <style jsx global>{`
-                            /* Hide the original title from TestimonialSlider */
-                            #testimonials .max-w-5xl > h3 {
-                                display: none;
-                            }
-                        `}</style>
                         <TestimonialSlider />
                     </div>
-
-                    {/* Note with Styled Paper Effect */}
                     <motion.div
                         className="mt-8 mx-auto max-w-lg text-center relative"
                         initial={{ opacity: 0, y: 20 }}
@@ -315,7 +305,6 @@ export default function TestymonialSection() {
                         </div>
                     </motion.div>
 
-                    {/* Logo Carousel - Trust Indicators */}
                     <motion.div
                         className="mt-20 text-center"
                         initial={{ opacity: 0, y: 20 }}
