@@ -180,7 +180,6 @@ export default function HeroSection() {
                                 </p>
                             </motion.div>
 
-                            {/* Right side illustration */}
                             <motion.div
                                 initial={{ opacity: 0, x: 20 }}
                                 animate={{ opacity: 1, x: 0 }}
@@ -188,10 +187,7 @@ export default function HeroSection() {
                                 className="w-full md:w-1/2 mt-12 md:mt-0"
                             >
                                 <div className="relative">
-                                    {/* Sun in background */}
                                     <div className="absolute -top-20 -left-20 w-40 h-40 bg-yellow-200 rounded-full opacity-60 blur-sm" />
-
-                                    {/* Main card */}
                                     <div className="relative bg-gradient-to-br from-sky-50 to-blue-50 p-10 rounded-2xl border-2 border-dashed border-sky-200 flex flex-col items-center transform rotate-1 shadow-lg">
                                         <div className="absolute -top-5 -right-5 bg-white p-3 rounded-full shadow-md">
                                             <div className="text-sky-500 text-3xl">
@@ -346,8 +342,6 @@ export default function HeroSection() {
                                             </div>
                                         </div>
                                     </div>
-
-                                    {/* Light blue circle in foreground */}
                                     <div className="absolute -bottom-12 -right-12 w-28 h-28 bg-blue-100 rounded-full opacity-60 blur-sm" />
 
                                     {/* Floating elements */}
