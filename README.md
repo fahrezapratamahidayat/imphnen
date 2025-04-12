@@ -26,7 +26,7 @@ IMPHNEN adalah platform komunitas satiris untuk mereka yang ingin menyebut diri 
 
 Proyek ini dibangun dengan:
 
-- **Next.js 14** - Framework React dengan App Router
+- **Next.js 15** - Framework React dengan App Router
 - **TypeScript** - Untuk type safety dan pengalaman developer yang lebih baik
 - **Tailwind CSS** - Untuk styling yang cepat dan responsif
 - **Framer Motion** - Untuk animasi dan interaksi yang menarik
